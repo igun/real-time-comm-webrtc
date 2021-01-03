@@ -24,10 +24,11 @@ function successCallback(stream) {
 
   if (window.URL) {
     // Chrome case: URL.CreateObjectURL() convert a MediaStream to a blob URL
-    video.src = window.URL.createObjectURL(stream)
+    //video.src = window.URL.createObjectURL(stream)
+    video.srcObject = stream
   } else {
     // Firefox and Opera: the src of the video can be set directly from the stream
-    video.src = stream
+    video.srcObject = stream
   }
 
   // We're all set. Let's just play the video out!
